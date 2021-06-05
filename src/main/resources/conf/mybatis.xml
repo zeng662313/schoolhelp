@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+
+
+    <!--设置别名-->
+    <typeAliases>
+        <!--name:实体类所在包名-->
+        <package name="com.yumoxuan.domain"/>
+    </typeAliases>
+
+    <!--    sql mapper (sql映射文件)的位置-->
+    <mappers>
+        <!--        一个mapper标签指定一个文件的位置
+            多个xml文件就要多个mapper标签，比较麻烦
+            从类路径开始的路径信息.target/classes
+ -->
+        <!--        <mapper resource="com/yumoxuan/dao/StudentDao.xml"/>-->
+
+        <!--还可以使用包的方式加载多个映射文件，这种方式可以直接加载整个包里面的全部xml文件
+        不过这样使用有要求，就是文件夹里面的mapper文件需要和接口名称一样，区分大小写的一样
+        mapper文件需要和dao接口在同一目录-->
+        <package name="com.yumoxuan.dao"/>
+    </mappers>
+</configuration>
+        <!--
+    mybatis文件的配置文件，主要定义了数据库的配置信息，sql映射文件的位置
+
+-->

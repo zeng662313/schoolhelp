@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yumoxuan.dao.StoreDao">
+    <select id="queryStores" resultType="com.yumoxuan.domain.Store">
+        select id,name,detail,picture,phone,time,adress from store order by id asc
+    </select>
+    <insert id="insertStore">
+        insert into store(name,detail,picture,phone,time,adress) values(#{name},#{detail},#{picture},#{phone},#{time},#{adress})
+    </insert>
+    <delete id="deleteStore">
+        delete from store where id=#{id}
+    </delete>
+    <update id="updateStore">
+        update store set name=#{name},detail=#{detail},picture=#{picture},phone=#{phone},time=#{time},adress=#{adress} where id=#{id}
+    </update>
+    <select id="exitsStore" resultType="com.yumoxuan.domain.Store">
+        select name from store where name=#{name}
+    </select>
+</mapper>
