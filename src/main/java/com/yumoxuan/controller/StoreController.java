@@ -19,7 +19,7 @@ public class StoreController {
 
     /*注册商家*/
     @ResponseBody
-    @RequestMapping(value = "/addStore.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/insertStore.do", method = RequestMethod.POST)
     public HashMap<String, String> addStore(Store store) {
         boolean sym = storeService.exitsStore(store.getName());//查看该商家名字是否已经存在
         boolean key = false;//是否更新成功

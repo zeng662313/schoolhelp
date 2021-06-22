@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yumoxuan.dao.OrderDao">
+    <insert id="insertOrder">
+        insert into orders(sid,name,picture,detail,price,saleNum) values(#{sid},#{name},#{picture},#{detail},#{price},#{saleNum})
+    </insert>
+
+    <select id="queryOrder" resultType="com.yumoxuan.domain.Order">
+        select id,sid,name,picture,detail,price,saleNum from orders where sid=#{sid}
+    </select>
+
+    <select id="queryOrderByStoreName" resultType="com.yumoxuan.domain.Order">
+        select t.name,t.picture,t.detail,t.price,t.saleNum from(select name,picture,detail,price,saleNum from orders where sid=#{sid}) t where t.name like '%${name}%'
+    </select>
+
+    <delete id="deleteOrder">
+        delete from orders where sid=#{sid}
+    </delete>
+
+    <update id="updateOrder">
+        update orders set name=#{name},picture=#{picture},detail=#{detail},price=#{price},saleNum=#{saleNum} where id=#{id}
+    </update>
+</mapper>
