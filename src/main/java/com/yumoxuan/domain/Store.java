@@ -8,6 +8,7 @@ public class Store {
     private String phone;
     private String time;
     private String adress;
+    private Integer saleNum=0;
 
     public Store() {
     }
@@ -41,6 +42,10 @@ public class Store {
         this.adress = adress;
     }
 
+    public void setSaleNum(Integer saleNum) {
+        this.saleNum = saleNum;
+    }
+
     public int getId() {
         return id;
     }
@@ -69,6 +74,10 @@ public class Store {
         return adress;
     }
 
+    public Integer getSaleNum() {
+        return saleNum;
+    }
+
     @Override
     public String toString() {
         return "Store{" +
@@ -79,6 +88,7 @@ public class Store {
                 ", phone='" + phone + '\'' +
                 ", time='" + time + '\'' +
                 ", adress='" + adress + '\'' +
+                ", saleNum=" + saleNum +
                 '}';
     }
 }
